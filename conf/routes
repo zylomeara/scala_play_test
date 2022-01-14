@@ -5,11 +5,14 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 # An example controller showing how to use dependency injection
-GET     /api/count                      controllers.CountController.count
+GET     /api/count                              controllers.CountController.count
 # An example controller showing how to write asynchronous code
-GET     /api/message                    controllers.AsyncController.message
+GET     /api/message                            controllers.AsyncController.message
 
-GET     /api/todo_list                  controllers.TodoTaskController.getTodoTaskList
+GET     /api/tasks                              controllers.TodoTaskController.getTodoTaskList
+PUT     /api/tasks/complete/:taskID             controllers.TodoTaskController.completeTask(taskID: Int)
+PUT     /api/tasks/uncomplete/:taskID           controllers.TodoTaskController.uncompleteTask(taskID: Int)
+POST     /api/tasks/create                       controllers.TodoTaskController.createTask
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /api/assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /api/assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
