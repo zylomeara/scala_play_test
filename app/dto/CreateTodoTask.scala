@@ -8,7 +8,7 @@ import utils.CirceConfiguration
 @ConfiguredJsonCodec
 case class CreateTodoTask(title: String, completed: Boolean) {
   def toTask: TodoTask = TodoTask(
-    _id = BSONObjectID.generate(),
+    id = BSONObjectID.generate(),
     title = title,
     completed = completed,
   )
